@@ -71,3 +71,16 @@ const database = {
         price: 485
     }]
 }
+
+export const getColors = () => {
+    return database.colors.map(color => ({...color}))
+}
+export const getInteriors = () => {
+    return database.interiors.map(interior => ({...interior}))
+}
+export const getTechnology = () => {
+    return database.technology.map(tech => ({...tech}))
+}
+export const getWheels = () => {
+    return database.wheels.map(wheel => ({...wheel}))
+}
