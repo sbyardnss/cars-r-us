@@ -1,0 +1,29 @@
+.resource {
+    height: 80px;
+    width: 200px;
+    border: 1px dotted red;
+    border-radius: 6px;
+    margin: 10px 60px 10px 60px;
+    padding: 8px;
+    box-shadow: 4px 4px 8px gray;
+    background-color: beige;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 800px;
+}
+
+#orderButton {
+    margin: 40px;
+}
+
+.confirmedOrders {
+    height: 20px;
+    margin: 10px;
+    background-color: lightcyan;
+    border: 1px dotted black
+}

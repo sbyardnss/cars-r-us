@@ -2,6 +2,23 @@ import { colorSelection } from "./scripts/colors.js";
 import { interiorSelection } from "./scripts/interiors.js";
 import { techSelection } from "./scripts/technology.js";
 import { wheelSelection } from "./scripts/wheels.js";
+import { orders } from "./scripts/orders.js";
+import { addCustomOrder } from "./scripts/database.js";
+
+
+
+document.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === "orderButton") {
+            addCustomOrder();
+        }
+    }
+)
+
+
+
+
 
 
 export const carsRUs = () => {
@@ -27,8 +44,16 @@ export const carsRUs = () => {
             ${wheelSelection()}
         </section>
     </article>
+
+    <article>
+            <button id="orderButton">Create Custom Order</button>
+    </article>
+
     <article class="orderConfirmation">
         <h2>Orders placed</h2>
+
+        ${orders()}
+    </article>
         
 `  
 }

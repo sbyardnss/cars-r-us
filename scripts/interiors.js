@@ -1,10 +1,21 @@
-import { getInteriors } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
 const interiors = getInteriors()
 
+// document.addEventListener(
+//     "change",
+//     (event) => {
+//         for (const interior of interiors) {
+//             if (event.target.value === interior.id) {
+//                 setInterior(parseInt(event.target.value))
+//             }
+//         }
+//     }
+// )
+
 
 export const interiorSelection = () => {
-    let html = `<select id="resource">
+    let html = `<select class="resource" id="intResource">
     <option value="0">Prompt to select resource...</option>\n`
     for (const interior of interiors) {
         html += `<option value="${interior.id}">${interior.style}</option>\n`
@@ -18,9 +29,10 @@ export const interiorSelection = () => {
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.id === "resource") {
+        if (changeEvent.target.id === "intResource") {
             const chosenOption = changeEvent.target.value
-            console.log(chosenOption)  // "1" or "2"
+            // console.log(chosenOption)  // "1" or "2"
+            setInterior(parseInt(chosenOption))
         }
     }
 )
