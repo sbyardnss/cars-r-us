@@ -4,7 +4,7 @@ import { techSelection } from "./scripts/technology.js";
 import { wheelSelection } from "./scripts/wheels.js";
 import { orders } from "./scripts/orders.js";
 import { addCustomOrder } from "./scripts/database.js";
-
+import { Types } from "./scripts/types.js"
 
 
 document.addEventListener(
@@ -43,6 +43,10 @@ export const carsRUs = () => {
             <h2>Wheels</h2>
             ${wheelSelection()}
         </section>
+    </article>
+    <article>
+        <h3>Body Types</h3>
+        ${Types()}
     </article>
 
     <article>

@@ -26,6 +26,11 @@ const database = {
         { id: 3, style: "18-inch Pair Spoke Silver", price: 415 },
         { id: 4, style: "18-inch Pair Spoke Black", price: 485 }
     ],
+    types: [
+        { id: 1, type: "Car" },
+        { id: 2, type: "SUV"},
+        { id: 3, type: "Truck"}
+    ],
     customOrders: [
         {
             id: 1,
@@ -70,6 +75,9 @@ export const getWheels = () => {
 export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }
+export const getTypes = () => {
+    return database.types.map(type => ({...type}))
+}
 
 
 export const setColors = (id) => {
@@ -83,4 +91,7 @@ export const setTech = (id) => {
 }
 export const setWheels = (id) => {
     database.orderBuilder.wheelId = id
+}
+export const setType = (id) => {
+    database.orderBuilder.typeId = id
 }

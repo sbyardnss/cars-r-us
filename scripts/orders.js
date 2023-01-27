@@ -1,10 +1,10 @@
-import { getColors, getTechnology, getInteriors, getWheels, getOrders } from "./database.js";
+import { getColors, getTechnology, getInteriors, getWheels, getOrders, getTypes } from "./database.js";
 
 const colors = getColors()
 const technology = getTechnology()
 const interiors = getInteriors()
 const wheels = getWheels()
-
+const types = getTypes()
 
 
 
@@ -38,7 +38,18 @@ const buildOrderLists = (order) => {
 
     let totalCost = foundTech.price + foundColor.price + foundInterior.price + foundWheels.price
 
-    const costString = totalCost.toLocaleString("en-us", {
+    const typeMultiplier = (cost) => {
+        (order.typeId === 1) ? totalCost = cost
+        : (order.typeId === 2) ? totalCost = (cost * 1.5)
+        : (order.typeId === 3) ? totalCost = (cost * 2.25)
+        : null
+        return totalCost
+    }
+
+    const trueCost = typeMultiplier(totalCost)
+
+
+    const costString = trueCost.toLocaleString("en-us", {
         style: "currency",
         currency: "USD"
     })
